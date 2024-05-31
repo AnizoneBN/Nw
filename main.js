@@ -10,6 +10,14 @@ function displayNews(newsItems) {
         const newsElement = document.createElement('div');
         newsElement.className = 'news-item';
 
+        const imageElement = document.createElement('img');
+        imageElement.className = 'news-image';
+        imageElement.src = item.image;
+        imageElement.alt = item.title;
+
+        const contentElement = document.createElement('div');
+        contentElement.className = 'news-content';
+
         const titleElement = document.createElement('h2');
         titleElement.className = 'news-title';
         titleElement.textContent = item.title;
@@ -22,9 +30,12 @@ function displayNews(newsItems) {
         descriptionElement.className = 'news-description';
         descriptionElement.textContent = item.description;
 
-        newsElement.appendChild(titleElement);
-        newsElement.appendChild(dateElement);
-        newsElement.appendChild(descriptionElement);
+        contentElement.appendChild(titleElement);
+        contentElement.appendChild(dateElement);
+        contentElement.appendChild(descriptionElement);
+
+        newsElement.appendChild(imageElement);
+        newsElement.appendChild(contentElement);
         newsContainer.appendChild(newsElement);
     });
 }

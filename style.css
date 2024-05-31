@@ -15,11 +15,26 @@ body {
 
 .news-item {
     border-bottom: 1px solid #ddd;
-    padding: 10px 0;
+    padding: 20px 0;
+    display: flex;
+    align-items: flex-start;
 }
 
 .news-item:last-child {
     border-bottom: none;
+}
+
+.news-image {
+    flex-shrink: 0;
+    width: 150px;
+    height: 100px;
+    margin-right: 20px;
+    object-fit: cover;
+    Border-radius: 5px;
+}
+
+.news-content {
+    flex-grow: 1;
 }
 
 .news-title {
@@ -34,6 +49,10 @@ body {
 }
 
 .news-description {
-    font-size: 1em;
+    font-size: 14px;
+    margin-left: -170px;
     line-height: 1.5;
+    margin-bottom: -10px;
+    
+   
 }
