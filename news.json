@@ -1,0 +1,17 @@
+[
+    {
+        "title": "News Article 1",
+        "date": "2024-05-30T00:00:00Z",
+        "description": "This is a description of the first news article."
+    },
+    {
+        "title": "News Article 2",
+        "date": "2024-05-29T00:00:00Z",
+        "description": "This is a description of the second news article."
+    },
+    {
+        "title": "News Article 3",
+        "date": "2024-05-28T00:00:00Z",
+        "description": "This is a description of the third news article."
+    }
+]
