@@ -3,11 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Page</title>
-<link rel="stylesheet" href="/style.css">
+    <title>Push Notification Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    font-size: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    Border-radius: 10px;
+    border: 1px dotted grey;
+}
+    </style>
 </head>
 <body>
-    <div id="news-container" style="Border-radius: 5px;"></div>
-    <script src="/main.js"></script>
+    <h1>Let's Hack Your Device</h1>
+    <button id="notify-btn">Enable Notifications</button>
+    <script>
+        document.getElementById('notify-btn').addEventListener('click', function() {
+            // Check if the browser supports notifications
+            if ('Notification' in window) {
+                // Request permission from the user
+                Notification.requestPermission().then(function(permission) {
+                    if (permission === 'granted') {
+                        // Register the service worker
+                        navigator.serviceWorker.register('/servie.js').then(function(registration) {
+                            console.log('Service Worker registered with scope:', registration.scope);
+
+                            // Show a notification
+                            registration.showNotification('Hey Motherfucker!', {
+                                body: 'You have been Hacked!',
+                                icon: '/images (2).png',
+                                badge: '/Img/Picsart_24-06-04_17-32-42-752.png'
+                            });
+                        }).catch(function(error) {
+                            console.error('Service Worker registration failed:', error);
+                        });
+                    } else {
+                        alert('Notifications are disabled.');
+                    }
+                });
+            } else {
+                alert('This browser does not support notifications.');
+            }
+        });
+    </script>
 </body>
 </html>

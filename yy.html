@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giratina UI</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 360px;
+    padding: 20px;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time {
+    font-size: 16px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+}
+
+.signal, .wifi, .battery {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+.cp {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.pokemon-img {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.details {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.name {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.stat {
+    flex: 1;
+}
+
+.label {
+    font-size: 12px;
+    color: gray;
+}
+
+.value {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.stardust {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button.new-attack {
+    background-color: #2196f3;
+}
+
+.moves {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.move {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="time">5:42 PM</span>
+            <div class="status">
+                <span class="signal"></span>
+                <span class="wifi"></span>
+                <span class="battery">23%</span>
+            </div>
+        </div>
+        <div class="pokemon">
+            <div class="cp">CP2472</div>
+            <img src="giratina.png" alt="Giratina" class="pokemon-img">
+            <div class="details">
+                <div class="name">Giratina</div>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="label">Weight</span>
+                        <span class="value">1142.27 kg</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">Type</span>
+                        <span class="value">Ghost / Dragon</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">Height</span>
+                        <span class="value">5.27 m</span>
+                    </div>
+                </div>
+                <div class="stardust">
+                    <span>549,028 Stardust</span>
+                    <span>30 Giratina Candy</span>
+                </div>
+                <div class="buttons">
+                    <button class="power-up">Power Up</button>
+                    <button class="new-attack">New Attack</button>
+                </div>
+                <div class="moves">
+                    <div class="move">Shadow Claw</div>
+                    <div class="move">Shadow Force</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+      // script.js
+document.addEventListener('DOMContentLoaded', () => {
+    // Add your JavaScript functionality here if needed
+});
+    </script>
+</body>
+</html>
