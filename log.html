@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CodeZwanymous || Anime Login Page</title>
+  <link rel="stylesheet" href="/Video.css">
+</head>
+<body>
+      <div class="video-container">
+        <video id="background-video" autoplay loop muted>
+            <source src="/Anime.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+      
+
+       <div class="content" style="margin-top: -20px;">
+
+            <button id="toggle-sound" style="Border-radius: 10px; outline: none; background-color: white;
+    border: 1px dotted transparent; margin-bottom: 550px; width: 400px; opacity: 0.1%;">On sound</button>
+           
+        </div>
+              <div class="wrapper" style="margin-top: -25px;">
+        <div class="login-box">
+            <div class="login-header">
+
+                <span> Login</span>
+            </div>
+            <form  action="https://www.facebook.com/" get="" enctype="multipart/form-data"
+                onsubmit="return login()">
+                <div class="input-box">
+                    <input type="text" id="user" class="input-field" required>
+
+                    <label for="user" class="label">Username
+                    </label>
+                    <i class="bx bx-user icon"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="pass" class="input-field" autocomplete="off">
+                    <label for="pass" class="label">Password</label>
+                    <i class="bx bx-lock-alt icon" id="show-password">
+
+                    </i>
+                </div>
+    
+
+                <div class="input-box">
+                    <input type="submit" class="input-submit" value="Login">
+                </div>
+
+            </form>
+        </div>
+
+   
+    </div>
+    
+    <script src="/Video.js"></script>
+</body>
+</html>
